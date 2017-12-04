@@ -5,6 +5,7 @@ Description: Il plugin aggiunge un widget e uno shortcode per mostrare gli autor
 Version: 0.3
 Author: Gianluigi Filippelli
 Author URI: http://dropseaofulaula.blogspot.it/
+Plugin URI: https://github.com/ulaulaman/co-authors-widget
 */
 /* ------------------------------------------------------ */
 # ---------------------------------------------------------
