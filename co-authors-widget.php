@@ -1,22 +1,23 @@
 <?php
 /*
 Plugin Name: Co-Authors Widget
-Description: Il plugin aggiunge un widget e uno shortcode per mostrare gli autori di un articolo. Compatibile con Co-Authors Plus.
-Version: 0.3
+Description: The plugin add a widget and a shortcode in order to show authors of an article. It is compatible with Co-Authors Plus.
+Version: 0.3.1
 Author: Gianluigi Filippelli
 Author URI: http://dropseaofulaula.blogspot.it/
 Plugin URI: https://github.com/ulaulaman/co-authors-widget
+License: GPLv2 or later
 */
 /* ------------------------------------------------------ */
 # ---------------------------------------------------------
 
-# Shortcode per mostrare gli autori: compatibile con coauthors plus
+# Shortcode to show authors
 add_shortcode('blog-post-coauthors', 'blog_post_coauthors');
 function blog_post_coauthors() {
   return coauthors_posts_links(", ", " e ", null, null, false);
 }
 
-# Mostrare gli avatar degli autori: compatibile con coauthors plus
+# Widget to show authors' avatars
 function blog_avatars() {
 if ( function_exists( 'get_coauthors' ) ) {
   $coauthors = get_coauthors();
@@ -60,51 +61,50 @@ function blog_enqueue() {
 }
 add_action( 'wp_enqueue_scripts', 'blog_enqueue' );
 
-# Shortcode avatar degli autori
+# Shortcode authors' avatars
 add_shortcode('blog-coauthors-avatars', 'blog_coauthors_avatars');
 function blog_coauthors_avatars() {
    return blog_avatars();
 }
 
-// Registrazione e caricamento del widget
+// Widget register
 function blog_load_widget() {
     register_widget( 'blog_widget' );
 }
 add_action( 'widgets_init', 'blog_load_widget' );
  
-// Creazione del widget
+// Widget load
 class blog_widget extends WP_Widget {
  
 function __construct() {
 parent::__construct(
  
-// Base ID del widget
+// Widget ID
 'blog_widget', 
  
-// Il nome del widget comparirà nell'UI
+// Widget name in UI
 __('Autori Blog', 'blog_widget_domain'), 
  
-// descrizione del widget
+// Widget description
 array( 'description' => __( 'Widget per mostrare avatar e nomi degli autori', 'blog_widget_domain' ), ) 
 );
 }
  
-// creazione del front-end del widget
- 
+// Widget front-end 
 public function widget( $args, $instance ) {
 $title = apply_filters( 'widget_title', $instance['title'] );
  
-// argomenti before e after
+// before and after
 echo $args['before_widget'];
 if ( ! empty( $title ) )
 echo $args['before_title'] . $title . $args['after_title'];
  
-// il codice mostra l'output
+// output
 blog_avatars();
 echo $args['after_widget'];
 }
          
-// backend del widget 
+// Widget backend 
 public function form( $instance ) {
 if ( isset( $instance[ 'title' ] ) ) {
 $title = $instance[ 'title' ];
@@ -112,7 +112,8 @@ $title = $instance[ 'title' ];
 else {
 $title = __( 'Articolo di', 'blog_widget_domain' );
 }
-// il form del widget
+
+// Widget form
 ?>
 <p>
 <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
@@ -121,7 +122,7 @@ $title = __( 'Articolo di', 'blog_widget_domain' );
 <?php 
 }
      
-// aggiornamento del widget
+// Widget update
 public function update( $new_instance, $old_instance ) {
 $instance = array();
 $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
