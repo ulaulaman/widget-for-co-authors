@@ -11,6 +11,13 @@ License: GPLv2 or later
 /* ------------------------------------------------------ */
 # ---------------------------------------------------------
 
+
+// Load translations
+add_action('plugins_loaded', 'wan_load_textdomain');
+function wan_load_textdomain() {
+	load_plugin_textdomain( 'co-authors-widget', false, dirname( plugin_basename(__FILE__) ) . '/languages/' );
+}
+
 # Shortcode to show authors
 add_shortcode('blog-post-coauthors', 'blog_post_coauthors');
 function blog_post_coauthors() {
@@ -130,12 +137,6 @@ $instance = array();
 $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
 return $instance;
 }
-}
-
-// Load translations
-add_action('plugins_loaded', 'wan_load_textdomain');
-function wan_load_textdomain() {
-	load_plugin_textdomain( 'co-authors-widget', false, dirname( plugin_basename(__FILE__) ) . '/languages/' );
 }
  
 /* ------------------------------------------------------ */
