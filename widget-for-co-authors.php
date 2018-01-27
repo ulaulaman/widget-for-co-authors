@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: Co-Authors Widget
-Description: The plugin add a widget and a shortcode in order to show authors of an article. It is compatible with Co-Authors Plus.
-Version: 0.3.1
+Plugin Name: Co-Authors Widget (develop)
+Description: The plugin add a widget and a shortcode in order to show authors of an article. It is compatible with Co-Authors Plus. (developing version)
+Version: 0.4
 Author: Gianluigi Filippelli
 Author URI: http://dropseaofulaula.blogspot.it/
-Plugin URI: https://github.com/ulaulaman/co-authors-widget
+Plugin URI: https://github.com/ulaulaman/widget-for-co-authors
 License: GPLv2 or later
 */
 /* ------------------------------------------------------ */
@@ -14,7 +14,7 @@ License: GPLv2 or later
 # Shortcode to show authors
 add_shortcode('blog-post-coauthors', 'blog_post_coauthors');
 function blog_post_coauthors() {
-  return coauthors_posts_links(", ", " e ", null, null, false);
+  return coauthors_posts_links(", ", " & ", null, null, false);
 }
 
 # Widget to show authors' avatars
@@ -22,6 +22,8 @@ function blog_avatars() {
 if ( function_exists( 'get_coauthors' ) ) {
   $coauthors = get_coauthors();
   $user_posts = get_author_posts_url( $coauthor->ID, $coauthor->user_nicename );
+  $show_profile = __( 'Show profile', 'text-domain' );;
+  $hide_profile = __( 'Hide profile', 'text-domain' );;
   $i = 0;
   foreach ( $coauthors as $coauthor ) {
     $i++;
@@ -36,10 +38,10 @@ if ( function_exists( 'get_coauthors' ) ) {
     </p>
   </div>
   <label for="<?php echo $i; ?>" class="read-more-trigger_closed">
-    <strong>+ Mostra profilo</strong>
+    <strong>+ <?php echo $show_profile; ?></strong>
   </label>
   <label for="<?php echo $i; ?>" class="read-more-trigger_opened">
-    <strong>- Nascondi profilo</strong>
+    <strong>- <?php echo $hide_profile; ?></strong>
   </label>
 </div>
     <?php
@@ -83,10 +85,10 @@ parent::__construct(
 'blog_widget', 
  
 // Widget name in UI
-__('Autori Blog', 'blog_widget_domain'), 
+__('Authors', 'blog_widget_domain'), 
  
 // Widget description
-array( 'description' => __( 'Widget per mostrare avatar e nomi degli autori', 'blog_widget_domain' ), ) 
+array( 'description' => __( 'Show avatars and names of the authors', 'blog_widget_domain' ), ) 
 );
 }
  
@@ -110,7 +112,7 @@ if ( isset( $instance[ 'title' ] ) ) {
 $title = $instance[ 'title' ];
 }
 else {
-$title = __( 'Articolo di', 'blog_widget_domain' );
+$title = __( 'Written by', 'blog_widget_domain' );
 }
 
 // Widget form
@@ -128,6 +130,12 @@ $instance = array();
 $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
 return $instance;
 }
+}
+
+// Load translations
+add_action('plugins_loaded', 'wan_load_textdomain');
+function wan_load_textdomain() {
+	load_plugin_textdomain( 'co-authors-widget', false, dirname( plugin_basename(__FILE__) ) . '/languages/' );
 }
  
 /* ------------------------------------------------------ */
