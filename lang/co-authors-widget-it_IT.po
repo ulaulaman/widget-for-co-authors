@@ -1,0 +1,48 @@
+# This file is distributed under the same license as the Co-Authors Widget package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Co-Authors Widget 0.4-beta\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/plugins/widget-for-co-"
+"authors/\n"
+"POT-Creation-Date: 2018-01-27 18:24+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2018-01-27 18:25+0100\n"
+"Language-Team: \n"
+"X-Generator: Poedit 1.8.7.1\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: it_IT\n"
+
+#: co-authors-widget.php:32
+msgid "Show profile"
+msgstr "Mostra il profilo"
+
+#: co-authors-widget.php:33
+msgid "Hide profile"
+msgstr "Nascondi il profilo"
+
+#: co-authors-widget.php:95
+msgid "Authors"
+msgstr "Autori"
+
+#: co-authors-widget.php:98
+msgid "Show avatars and names of the authors"
+msgstr "Mostra gli avatar e i nomi degli autori"
+
+#: co-authors-plus.php:122
+msgid "Written by"
+msgstr "Scritto da"
+
+#. Description of the plugin/theme
+msgid ""
+"The plugin add a widget and a shortcode in order to show authors of an "
+"article. It is compatible with Co-Authors Plus."
+msgstr ""
+"Il plugin aggiunge un widget e uno shortcode per mostrare gli autori "
+"di un articolo. Compatibile con Co-Authors Plus."
+
+#. Author of the plugin/theme
+msgid "Gianluigi Filippelli"
+msgstr "Gianluigi Filippelli"

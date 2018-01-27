@@ -1,0 +1,37 @@
+# This file is distributed under the same license as the Co-Authors Widget package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Co-Authors Widget 0.4-beta\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/plugins/widget-for-co-authors/\n"
+"POT-Creation-Date: 2018-01-27 17:49:00+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: co-authors-widget.php:32
+msgid "Show profile"
+msgstr ""
+
+#: co-authors-widget.php:33
+msgid "Hide profile"
+msgstr ""
+
+#: co-authors-widget.php:95
+msgid "Authors"
+msgstr ""
+
+#: co-authors-widget.php:98
+msgid "Show avatars and names of the authors"
+msgstr ""
+
+#: co-authors-widget.php:122
+msgid "Written by"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "The plugin add a widget and a shortcode in order to show authors of an article. It is compatible with Co-Authors Plus."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Gianluigi Filippelli"
+msgstr ""
