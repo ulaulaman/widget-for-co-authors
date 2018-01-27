@@ -2,7 +2,7 @@
 /*
 Plugin Name: Co-Authors Widget (develop)
 Description: The plugin add a widget and a shortcode in order to show authors of an article. It is compatible with Co-Authors Plus. (developing version)
-Version: 0.5
+Version: 0.5.2
 Author: Gianluigi Filippelli
 Author URI: http://dropseaofulaula.blogspot.it/
 Plugin URI: https://github.com/ulaulaman/widget-for-co-authors
@@ -11,11 +11,10 @@ License: GPLv2 or later
 /* ------------------------------------------------------ */
 # ---------------------------------------------------------
 
-
 // Load translations
-add_action('plugins_loaded', 'wan_load_textdomain');
-function wan_load_textdomain() {
-	load_plugin_textdomain( 'co-authors-widget', false, dirname( plugin_basename(__FILE__) ) . '/languages/' );
+add_action('plugins_loaded', 'caw_load_translations');
+function caw_load_translations() {
+	load_plugin_textdomain( 'co-authors-widget', false, dirname( plugin_basename(__FILE__) ) . '/lang/' );
 }
 
 # Shortcode to show authors
@@ -29,8 +28,8 @@ function blog_avatars() {
 if ( function_exists( 'get_coauthors' ) ) {
   $coauthors = get_coauthors();
   $user_posts = get_author_posts_url( $coauthor->ID, $coauthor->user_nicename );
-  $show_profile = __( 'Show profile', 'text-domain' );;
-  $hide_profile = __( 'Hide profile', 'text-domain' );;
+  $show_profile = __( 'Show profile', 'co-authors-widget' );
+  $hide_profile = __( 'Hide profile', 'co-authors-widget' );
   $i = 0;
   foreach ( $coauthors as $coauthor ) {
     $i++;
@@ -45,10 +44,10 @@ if ( function_exists( 'get_coauthors' ) ) {
     </p>
   </div>
   <label for="<?php echo $i; ?>" class="read-more-trigger_closed">
-    <strong>+ <?php echo $show_profile; ?></strong>
+    <strong>+ <?php printf( $show_profile ); ?></strong>
   </label>
   <label for="<?php echo $i; ?>" class="read-more-trigger_opened">
-    <strong>- <?php echo $hide_profile; ?></strong>
+    <strong>- <?php printf( $hide_profile ); ?></strong>
   </label>
 </div>
     <?php
@@ -92,10 +91,10 @@ parent::__construct(
 'blog_widget', 
  
 // Widget name in UI
-__('Authors', 'blog_widget_domain'), 
+__('Authors', 'co-authors-widget'), 
  
 // Widget description
-array( 'description' => __( 'Show avatars and names of the authors', 'blog_widget_domain' ), ) 
+array( 'description' => __( 'Show avatars and names of the authors', 'co-authors-widget' ), ) 
 );
 }
  
@@ -119,7 +118,7 @@ if ( isset( $instance[ 'title' ] ) ) {
 $title = $instance[ 'title' ];
 }
 else {
-$title = __( 'Written by', 'blog_widget_domain' );
+$title = __( 'Written by', 'co-authors-widget' );
 }
 
 // Widget form
