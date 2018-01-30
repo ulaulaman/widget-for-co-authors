@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: Co-Authors Widget (develop)
-Description: The plugin add a widget and a shortcode in order to show authors of an article. It is compatible with Co-Authors Plus. (developing version)
-Version: 0.5.2
+Plugin Name: Co-Authors Widget
+Description: The plugin add a widget and a shortcode in order to show authors of an article. It is compatible with Co-Authors Plus.
+Version: 0.5.3
 Author: Gianluigi Filippelli
 Author URI: http://dropseaofulaula.blogspot.it/
 Plugin URI: https://github.com/ulaulaman/widget-for-co-authors
@@ -14,7 +14,7 @@ License: GPLv2 or later
 // Load translations
 add_action('plugins_loaded', 'caw_load_translations');
 function caw_load_translations() {
-	load_plugin_textdomain( 'co-authors-widget', false, dirname( plugin_basename(__FILE__) ) . '/lang/' );
+	load_plugin_textdomain( 'widget-for-co-authors', false, dirname( plugin_basename(__FILE__) ) . '/lang/' );
 }
 
 # Shortcode to show authors
@@ -28,8 +28,8 @@ function blog_avatars() {
 if ( function_exists( 'get_coauthors' ) ) {
   $coauthors = get_coauthors();
   $user_posts = get_author_posts_url( $coauthor->ID, $coauthor->user_nicename );
-  $show_profile = __( 'Show profile', 'co-authors-widget' );
-  $hide_profile = __( 'Hide profile', 'co-authors-widget' );
+  $show_profile = __( 'Show profile', 'widget-for-co-authors' );
+  $hide_profile = __( 'Hide profile', 'widget-for-co-authors' );
   $i = 0;
   foreach ( $coauthors as $coauthor ) {
     $i++;
@@ -91,10 +91,10 @@ parent::__construct(
 'blog_widget', 
  
 // Widget name in UI
-__('Authors', 'co-authors-widget'), 
+__('Authors', 'widget-for-co-authors'), 
  
 // Widget description
-array( 'description' => __( 'Show avatars and names of the authors', 'co-authors-widget' ), ) 
+array( 'description' => __( 'Show avatars and names of the authors', 'widget-for-co-authors' ), ) 
 );
 }
  
@@ -118,7 +118,7 @@ if ( isset( $instance[ 'title' ] ) ) {
 $title = $instance[ 'title' ];
 }
 else {
-$title = __( 'Written by', 'co-authors-widget' );
+$title = __( 'Written by', 'widget-for-co-authors' );
 }
 
 // Widget form
