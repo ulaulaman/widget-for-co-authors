@@ -12,15 +12,16 @@ The plugin add also a slider in order to show user's profile. If you want change
 4. Add the widget to your sidebar or the shortcode to your posts or pages.
 
 # Changelog
+<strong>0.5.3 add the correct lang files</strong><br/>
+0.5.2 fix error code in domain name in widget<br/>
+0.5.1 fix error code in domain name for messages<br/>
+0.5 support for translations<br/>
+0.4 translation italian messages in english<br/>
+0.3.1 test with wp 4.9.2<br/>
+0.3 add profile link and css<br/>
+0.2 creation of the widget to show authors' avatars<br/>
 0.1 creation of the shortcode to add post's authors
-0.2 creation of the widget to show authors' avatars
-0.3 add profile link and css
-0.3.1 test with wp 4.9.2
-0.4 translation italian messages in english
-0.5 support for translations
-0.5.1 fix error code in domain name for messages
-0.5.2 fix error code in domain name in widget
 
 # Screenshot
 <div align="center"><img src="https://github.com/ulaulaman/widget-for-co-authors/blob/master/assets/screenshot-1.jpg" /></div>
-*The result of the widget in a multiple authors post*
+<em>The result of the widget in a multiple authors post</em>
