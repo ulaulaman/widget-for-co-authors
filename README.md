@@ -23,5 +23,5 @@ The plugin add also a slider in order to show user's profile. If you want change
 0.1 creation of the shortcode to add post's authors
 
 # Screenshot
-<div align="center"><img src="https://github.com/ulaulaman/widget-for-co-authors/blob/master/assets/screenshot-1.jpg" /></div>
-<em>The result of the widget in a multiple authors post</em>
+<div align="center"><img src="https://github.com/ulaulaman/widget-for-co-authors/blob/master/assets/screenshot-1.jpg?raw=true" /><br/>
+<em>The result of the widget in a multiple authors post</em></div>
