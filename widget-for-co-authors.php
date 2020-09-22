@@ -2,7 +2,7 @@
 /*
 Plugin Name: Co-Authors Widget
 Description: The plugin add a widget and a shortcode in order to show authors of an article. It is compatible with Co-Authors Plus.
-Version: 0.5.3
+Version: 0.6
 Author: Gianluigi Filippelli
 Author URI: http://dropseaofulaula.blogspot.it/
 Plugin URI: https://github.com/ulaulaman/widget-for-co-authors
