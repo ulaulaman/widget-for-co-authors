@@ -25,11 +25,12 @@ function blog_post_coauthors() {
 
 # Widget to show authors' avatars
 function blog_avatars() {
+	$show_profile = __( 'Show profile', 'widget-for-co-authors' );
+    $hide_profile = __( 'Hide profile', 'widget-for-co-authors' );
 if ( function_exists( 'get_coauthors' ) ) {
   $coauthors = get_coauthors();
   $user_posts = get_author_posts_url( $coauthor->ID, $coauthor->user_nicename );
-  $show_profile = __( 'Show profile', 'widget-for-co-authors' );
-  $hide_profile = __( 'Hide profile', 'widget-for-co-authors' );
+  
   $i = 0;
   foreach ( $coauthors as $coauthor ) {
     $i++;
@@ -54,10 +55,24 @@ if ( function_exists( 'get_coauthors' ) ) {
   }
 //
 } else {
-  
+  $i = 0;
   ?>
+	<div class="block-item-text">
+		<input type="checkbox" hidden class="read-more-state" id="<?php echo $i; ?>">
+  <div class="read-more-wrap">
     <p><?php echo get_avatar( get_the_author_meta( 'user_email' ), 65 ); ?>
-    <a href=<?php echo get_author_posts_url( $coauthor->ID, $coauthor->user_nicename ); ?>><?php echo $coauthor->display_name; ?></a></p>
+    <a href=<?php echo get_the_author_meta( 'user_url' ); ?>><?php echo get_the_author_meta( 'display_name' ); ?></a></p>
+    <p class="read-more-target">
+    <?php echo get_the_author_meta( 'description' ); ?>
+    </p>
+  </div>
+  <label for="<?php echo $i; ?>" class="read-more-trigger_closed">
+    <strong>+ <?php printf( $show_profile ); ?></strong>
+  </label>
+  <label for="<?php echo $i; ?>" class="read-more-trigger_opened">
+    <strong>- <?php printf( $hide_profile ); ?></strong>
+  </label>
+</div>
 
   <?php
 }
