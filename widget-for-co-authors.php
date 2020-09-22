@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Co-Authors Widget
+Plugin Name: Co-Authors Widget Dev
 Description: The plugin add a widget and a shortcode in order to show authors of an article. It is compatible with Co-Authors Plus.
 Version: 0.6
 Author: Gianluigi Filippelli
