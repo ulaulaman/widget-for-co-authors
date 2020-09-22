@@ -2,7 +2,7 @@
 Contributors: ulaulaman
 Tags: widget, authors, coauthors, multi author, multiple authors
 Requires at least: 4.8.5
-Tested up to: 4.9.2
+Tested up to: 5.5.1
 Requires PHP: 7.0.18
 Stable tag: trunk
 License: GPLv2 or later
