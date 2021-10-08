@@ -1,4 +1,4 @@
-The plugin add a widget and a shortcode in order to show authors of an article. It is compatible with Co-Authors Plus, but it is not strictly required.
+The plugin add a widget and a shortcode in order to show authors of an article. It is compatible with Co-Authors Plus, but it is not strictly required
 
 # Description
 [Co-Authors Plus](https://wordpress.org/plugins/co-authors-plus/) is one of the most useful plugin for multiple authors blogs: using it you can add more than one author to your posts and you can define also guest authors without user creation. Despite this, not all themes are able to show all the authors of a post or to show the avatar of the guest author. This plugin add a widget to show users' avatars to post also for guest authors and for posts with multiple authors.
