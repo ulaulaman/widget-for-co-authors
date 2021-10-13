@@ -6,7 +6,7 @@ You can also add avatars using the shordcode [blog-post-coauthors].
 The plugin add also a slider in order to show user's profile. If you want change the style, you can modify blog-spoiler.css file in the plugin folder.
 
 # Installation
-1. Extract the widget-for-coauthors.zip file and upload its contents to the /wp-content/plugins/ directory. Alternately, you can install directly from the Plugin directory within your WordPress Install.
+1. Extract the widget-for-coauthors.zip file (see the **Current release** section) and upload its contents to the /wp-content/plugins/ directory. Alternately, you can install directly from the Plugin directory within your WordPress Install.
 2. Activate the plugin through the \"Plugins\" menu in WordPress.
 3. Add the widget to your sidebar or the shortcode to your posts or pages.
 
@@ -23,7 +23,7 @@ The plugin add also a slider in order to show user's profile. If you want change
 * 0.1 creation of the shortcode to add post's authors
 
 # Current release
-* 0.6
+* [0.6](https://github.com/ulaulaman/widget-for-co-authors/releases/download/0.6/widget-for-co-authors.0.6.zip)
 
 ## Old releases
 * [0.5.3](https://github.com/ulaulaman/widget-for-co-authors/releases/download/0.5.3/widget-for-co-authors.0.5.3.zip)
